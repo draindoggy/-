@@ -3,7 +3,7 @@ import os
 conn = sqlite3.connect("baza_podobina.db")
 cursor = conn.cursor()
 
-cursor.execute("""CREATE TABLE IF NOT EXISTS telephone_book5
+cursor.execute("""CREATE TABLE IF NOT EXISTS telephone_book
                  (surname TEXT,
                  name TEXT,
                  patronymic TEXT,
@@ -26,7 +26,7 @@ for kol_string in range(1, kol_string+1):
     number = str(input())
     users = [surname, name, patronymic, number]
     conn.commit()
-    cursor.execute("INSERT INTO telephone_book5 VALUES(?, ?, ?, ?);", users)
+    cursor.execute("INSERT INTO telephone_book VALUES(?, ?, ?, ?);", users)
     conn.commit()
 print('открываю базу данных...')
 os.startfile(r'C:\Program Files\SQLiteStudio\SQLiteStudio.exe')
